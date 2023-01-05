@@ -146,10 +146,10 @@ class FMFFManager
 
         // link for admins
         add_menu_page(
-            __( ' ', 'stripe_manager' ),
-            __( 'stripe_manager', 'stripe_manager' ),
+            __( ' ', 'fmffmanager' ),
+            __( 'FMFFmanager', 'fmffmanager' ),
             $capabilities,
-            'stripe_manager',
+            'fmffmanager',
             $route_call_func,
             'none'
         );

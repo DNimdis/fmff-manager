@@ -637,7 +637,7 @@ class SmModel {
     if(isset($this->$property) && !empty($this->$property) && OsUtilHelper::is_valid_email($this->$property)){
       return true;
     }else{
-      return new WP_Error($property, sprintf( __( '%s is not valid', 'stripe_manager' ), $this->get_property_nice_name($property) ));
+      return new WP_Error($property, sprintf( __( '%s is not valid', 'fmffmanager' ), $this->get_property_nice_name($property) ));
     }
   }
 
@@ -646,7 +646,7 @@ class SmModel {
     if($validation_result){
       return true;
     }else{
-      return new WP_Error($property, sprintf( __( '%s can not be blank', 'stripe_manager' ), $this->get_property_nice_name($property) ));
+      return new WP_Error($property, sprintf( __( '%s can not be blank', 'fmffmanager' ), $this->get_property_nice_name($property) ));
     }
   }
   
@@ -659,7 +659,7 @@ class SmModel {
       }
       $items = $this->db->get_results( $query, ARRAY_A);
       if($items){
-        return new WP_Error($property, sprintf( __( '%s has to be unique', 'stripe_manager' ), $this->get_property_nice_name($property) ));
+        return new WP_Error($property, sprintf( __( '%s has to be unique', 'fmffmanager' ), $this->get_property_nice_name($property) ));
       } 
     }
     return true;

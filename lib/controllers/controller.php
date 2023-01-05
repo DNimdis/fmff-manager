@@ -5,7 +5,7 @@ class SmController {
   $layout = 'admin',
   $views_folder = FMFF_MANAGER_VIEWS_ABSPATH,
   $return_format = 'html',
-  $extra_css_classes = array('stripe_manager');
+  $extra_css_classes = array('fmffmanager');
 
   public $action_access = [
                           'customer' => [], 
@@ -44,7 +44,7 @@ class SmController {
   function __construct(){
     $this->params = $this->get_params();
     $this->set_layout($this->layout);
-    $this->vars['page_header'] = __('Enrollments', 'stripe_manager');
+    $this->vars['page_header'] = __('Enrollments', 'fmffmanager');
     $this->vars['breadcrumbs'][] = array('label' => __('Dashboard', 'latepoint'), 'link' => SmRouterHelper::build_link(SmRouterHelper::build_route_name('home', 'index') ));
 
   }

@@ -34,7 +34,7 @@ class SmRouterHelper {
           $params_query = '&'.http_build_query($params);
         }
         if(is_array($route) && (count($route) == 2)) $route = SmRouterHelper::build_route_name($route[0], $route[1]);
-        return admin_url('admin.php?page=stripe_manager&route_name='.$route.$params_query);
+        return admin_url('admin.php?page=fmffmanager&route_name='.$route.$params_query);
     }
 
     public static function build_route_name($controller, $action){

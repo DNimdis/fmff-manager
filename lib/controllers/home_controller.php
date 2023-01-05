@@ -18,7 +18,7 @@ class SmHomeController extends SmController
     public function index()
     {
         # code...
-        $this->vars['breadcrumbs'][] = array('label' => __('Test', 'stripe_manager'), 'link' => false);
+        $this->vars['breadcrumbs'][] = array('label' => __('Test', 'fmffmanager'), 'link' => false);
 
         error_log("Si llego ***");
 

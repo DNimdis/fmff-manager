@@ -1,0 +1,52 @@
+
+
+.stripe-manager-btn.sm-loading {
+	color: transparent !important;
+	position: relative
+}
+
+.stripe-manager-btn.sm-loading span,
+.stripe-manager-btn.sm-loading i {
+	color: transparent !important
+}
+
+.stripe-manager-btn.sm-loading:after {
+	display: block;
+	content: "";
+	width: 14px !important;
+	height: 14px !important;
+	border-bottom: 2px solid #24c5e1;
+	border-left: 2px solid #24c5e1;
+	border-top: 2px solid #24c5e1;
+	border-right: 2px solid rgba(255, 255, 255, 0);
+	border-radius: 20px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	animation: os-loading 700ms infinite linear;
+	background-color: transparent !important
+}
+
+.card-payment div > div {
+    margin-right: 1em;
+}
+.card-payment {
+    
+    /*border: 1px solid;*/
+    border-radius: 5em;    
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-left: 1em;
+}
+
+.close_aaction_pm:hover {    
+    background-color: #08a49a;   
+    color: white;
+}
+.close_aaction_pm {
+    position: absolute;
+    right: 16px;
+    top: 7px;
+    cursor: pointer;    
+}

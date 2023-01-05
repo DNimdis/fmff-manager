@@ -2,7 +2,7 @@
 
 /**
  * Plugin Name: FMFF Manager
- * Description: Plugin administrativos a medida para a federacion
+ * Description: Plugin administrativo a medida para la federacion
  * Version: 1.0.0
  * Author: Dalvik   
  */

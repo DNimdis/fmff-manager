@@ -193,6 +193,9 @@ class FMFFManager
     }
 
     public function load_admin_scripts_and_styles() {
+
+        //Styles
+        wp_enqueue_style( 'latepoint-main-back', $this->public_stylesheets() . 'main_back.css', false, $this->version );
     
         $localized_vars = array( 'ajaxurl' => admin_url( 'admin-ajax.php' ));   
         wp_enqueue_script( 'stripe-manager-main-back',     $this->public_javascripts() . 'main_back.js', ['jquery'], $this->version );         

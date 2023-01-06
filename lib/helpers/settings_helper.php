@@ -66,6 +66,10 @@ class SmSettingsHelper {
     return openssl_decrypt($value, 'aes-256-ecb', FMFF_MANAGER_ENCRYPTION_KEY);
   }
 
+  public static function is_env_dev(){
+    return (FMFF_MANAGER_ENV == FMFF_MANAGER_ENV_DEV);
+  }
+
 }
 
 ?>

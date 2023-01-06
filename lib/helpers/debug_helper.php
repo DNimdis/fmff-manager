@@ -31,7 +31,7 @@ class OsDebugHelper {
 
 
 	public static function log($message){
-		if(!OsSettingsHelper::is_env_dev()) return;
+		if(!SmSettingsHelper::is_env_dev()) return;
     		
         if (is_array($message) || is_object($message)) {
             error_log(print_r($message, true));

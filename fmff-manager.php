@@ -50,6 +50,12 @@ class FMFFManager
 
     public function define_constants(){
         
+        $this->define( 'FMFF_MANAGER_ENV_LIVE', 'live' );
+        $this->define( 'FMFF_MANAGER_ENV_DEMO', 'demo' );
+        $this->define( 'FMFF_MANAGER_ENV_DEV', 'dev' );
+
+
+        $this->define( 'FMFF_MANAGER_ENV', FMFF_MANAGER_ENV_LIVE );
         $this->define( 'FMFF_MANAGER_ENCRYPTION_KEY', 'catalyst(*Ufdsoh2ie7QEy,R@6(I9H/VoX^r4}SHC_7W-<$S!,/kd)OSw?.Y9lcd105cu$' );
         $this->define( 'FMFF_MANAGER_ABSPATH', dirname( __FILE__ ) . '/' );
         $this->define( 'FMFF_MANAGER_LIB_ABSPATH', FMFF_MANAGER_ABSPATH . 'lib/' );

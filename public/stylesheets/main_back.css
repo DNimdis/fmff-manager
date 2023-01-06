@@ -1,4 +1,8 @@
 #toplevel_page_fmffmanager .wp-menu-image.dashicons-before:before {
-    background-image: url('images/workout_icon.svg'); 
-    height: 30px;
+    background-image: url(/wp-content/plugins/fmff-manager/public/images/workout_icon.svg);
+    width: 24px;
+    height: 24px;
+    background-position: right bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
 }

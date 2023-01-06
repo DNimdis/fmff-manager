@@ -83,6 +83,7 @@ class FMFFManager
         include_once( FMFF_MANAGER_ABSPATH . 'lib/helpers/shortcodes_helper.php' );
         include_once( FMFF_MANAGER_ABSPATH . '/lib/helpers/payments_stripe_helper.php' );
         include_once( FMFF_MANAGER_ABSPATH . 'lib/helpers/settings_helper.php' );
+        include_once( FMFF_MANAGER_ABSPATH . 'lib/helpers/debug_helper.php' );
 
         // CONTROLLERS
         include_once( FMFF_MANAGER_ABSPATH . 'lib/controllers/controller.php' );

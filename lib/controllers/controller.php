@@ -3,7 +3,7 @@ class SmController {
 
   protected $params,
   $layout = 'admin',
-  $views_folder = FMFF_MANAGER_VIEWS_ABSPATH,
+  $views_folder = FMFF_MANAGER_VIEWS_ABSPATH_SHARED,
   $return_format = 'html',
   $extra_css_classes = array('fmffmanager');
 
@@ -61,7 +61,6 @@ class SmController {
 
   // You can pass array to $view_name, ['json_view_name' => ..., 'html_view_name' => ...]
   function format_render_return($view_name, $extra_vars = array(), $json_return_vars = array(), $from_shared_folder = false){
-    error_log($this->get_layout());
 
     $html = '';
     if($this->get_return_format() == 'json'){
@@ -114,7 +113,7 @@ class SmController {
 
   // render view and if needed layout, when layout is rendered - view variable is passed to a layout file
   function render($view, $layout = 'none', $extra_vars = array()){
-    error_log("Veamos el layout ==>".$layout);
+    
     $this->vars['route_name'] = $this->route_name;
     extract($extra_vars);
     extract($this->vars);

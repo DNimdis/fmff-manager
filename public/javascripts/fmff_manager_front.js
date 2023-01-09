@@ -3,7 +3,7 @@ function fmff_manager_add_notification(t, e) {
     //var a = arguments.length > 1 && void 0 !== e ? e : "success"
     var a = e,
         n = jQuery("body").find(".os-notifications");
-    n.length || (jQuery("body").append('<div class="os-notifications"></div>'), n = jQuery("body").find(".os-notifications")), n.find(".item").length > 0 && n.find(".item:first-child").remove(), n.append('<div class="item item-type-' + a + '">' + t + '<span class="os-notification-close"><i class="latepoint-icon latepoint-icon-x"></i></span></div>')
+    n.length || (jQuery("body").append('<div class="os-notifications"></div>'), n = jQuery("body").find(".os-notifications")), n.find(".item").length > 0 && n.find(".item:first-child").remove(), n.append('<div class="item item-type-' + a + '">' + t + '<span class="os-notification-close"><i class="fmffmanager-icon fmffmanager-icon-x"></i></span></div>')
 }
 
 
@@ -35,12 +35,11 @@ jQuery(document).ready(function ($) {
 
     });
 
-    $(".stripe-manager-content").on("click", 'form[data-sm-action] button[type="submit"]', (function(t) {
+    $(".fmffmanager").on("click", 'form[data-sm-action] button[type="submit"]', (function(t) {
         $(this).addClass("sm-loading");
     }))
 
-
-    $(".stripe-manager-content").on("submit", "form[data-sm-action]", (function(e) {
+    $(".fmffmanager").on("submit", "form[data-sm-action]", (function(e) {
         e.preventDefault();
 
 
@@ -63,7 +62,7 @@ jQuery(document).ready(function ($) {
                 console.log( n );
                 if ("success" === n.status ) {
                     a.find('button[type="submit"].sm-loading').removeClass("sm-loading");
-                    fmff_manager_add_notification( n.message,"success"),void location.reload();
+                    fmff_manager_add_notification( n.message,"success");//,void location.reload();
                 }else{                    
                     alert(n.message);
                     a.find('button[type="submit"].sm-loading').removeClass("sm-loading");
@@ -78,5 +77,23 @@ jQuery(document).ready(function ($) {
 
 
     }));
+
+
+
+    window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+      
 
 });

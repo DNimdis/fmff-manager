@@ -3,6 +3,19 @@
 class SmShortcodesHelper
 {
     
+    public static function shortcode_fmff_form_ruf($atts, $content = "")
+    {
+        $atts = shortcode_atts( array(
+            'caption' => __('Stripe Manager', 'latepoint')
+        ), $atts );
+
+        ob_start();
+        include(FMFF_MANAGER_VIEWS_PARTIALS_ABSPATH . '_fmff_form_ruf.php');
+        $output = ob_get_contents();
+        ob_end_clean();
+
+        return $output;
+    }
 
     public static function shortcode_fmff_manager_form( $atts, $content = "" ){
 
@@ -106,4 +119,7 @@ class SmShortcodesHelper
 
         return $output;
     }
+
+
+
 }

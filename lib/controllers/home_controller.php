@@ -12,19 +12,39 @@ class SmHomeController extends SmController
     parent::__construct();
     
     $this->views_folder = FMFF_MANAGER_VIEWS_ABSPATH . 'home/';
+    $this->vars['page_header'] = __('Dashboard', 'latepoint');
+
   }
 
 
     public function index()
     {
         # code...
-        $this->vars['breadcrumbs'][] = array('label' => __('Test', 'fmffmanager'), 'link' => false);
+        //$this->vars['breadcrumbs'][] = array('label' => __('Test', 'fmffmanager'), 'link' => false);
 
-        error_log("Si llego ***");
+        $this->vars['page_header'] = false;
 
 
+        $this->vars['widget_stats']="";
+        $this->set_layout('admin');
 
         $this->format_render(__FUNCTION__);
+    }
+
+
+    public function ruf_prueba()
+    {
+      # code...
+
+      error_log(  wp_json_encode( $this->params ) );
+
+      $response_html = __('Settings Updated', 'latepoint');
+      $status = FMFF_MANAGER_STATUS_SUCCESS;
+
+      if($this->get_return_format() == 'json'){
+        $this->send_json(array('status' => $status, 'message' => $response_html));
+      }
+
     }
 
 }

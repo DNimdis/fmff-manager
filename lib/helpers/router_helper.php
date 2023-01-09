@@ -4,6 +4,41 @@
 
 class SmRouterHelper {
 
+
+
+    public static function build_pre_route_link($route, $params = array()){
+        return self::build_link($route, array_merge(array('pre_route'=> 1), $params));
+      }
+    
+      public static function add_extension($string = '', $extension = '.php'){
+        if(substr($string, -strlen($extension))===$extension) return $string;
+        else return $string.$extension;
+      }
+    
+      public static function build_link($route, $params = array()){
+        $params_query = '';
+        if($params){
+          $params_query = '&'.http_build_query($params);
+        }
+        if(is_array($route) && (count($route) == 2)) $route = SmRouterHelper::build_route_name($route[0], $route[1]);
+        return admin_url('admin.php?page=fmffmanager&route_name='.$route.$params_query);
+      }
+    
+      public static function build_admin_post_link($route, $params = array()){
+        $params_query = '';
+        if($params){
+          $params_query = '&'.http_build_query($params);
+        }
+        if(is_array($route) && (count($route) == 2)) $route = SmRouterHelper::build_route_name($route[0], $route[1]);
+        return admin_url('admin-post.php?action=fmff_manager_route_call&route_name='.$route.$params_query);
+      }
+    
+      public static function link_has_route($route_name, $link){
+        $link_params = parse_url($link);
+        parse_str($link_params['query'], $link_query_params);
+        return ($link_query_params && isset($link_query_params['route_name']) && ($link_query_params['route_name'] == $route_name));        
+      }
+
     public static function call_by_route_name($route_name, $return_format = 'html'){
         list($controller_name, $action) = explode('__', $route_name);
         $controller_name = str_replace('_', '', ucwords($controller_name, '_'));
@@ -26,15 +61,6 @@ class SmRouterHelper {
         }else{
             _e('Page Not Found', 'latepoint');
         }
-    }
-
-    public static function build_link($route, $params = array()){
-        $params_query = '';
-        if($params){
-          $params_query = '&'.http_build_query($params);
-        }
-        if(is_array($route) && (count($route) == 2)) $route = SmRouterHelper::build_route_name($route[0], $route[1]);
-        return admin_url('admin.php?page=fmffmanager&route_name='.$route.$params_query);
     }
 
     public static function build_route_name($controller, $action){

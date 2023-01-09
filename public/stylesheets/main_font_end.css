@@ -1,16 +1,16 @@
 
 
-.stripe-manager-btn.sm-loading {
+.fmffmanager-btn.sm-loading {
 	color: transparent !important;
 	position: relative
 }
 
-.stripe-manager-btn.sm-loading span,
-.stripe-manager-btn.sm-loading i {
+.fmffmanager-btn.sm-loading span,
+.fmffmanager-btn.sm-loading i {
 	color: transparent !important
 }
 
-.stripe-manager-btn.sm-loading:after {
+.fmffmanager-btn.sm-loading:after {
 	display: block;
 	content: "";
 	width: 14px !important;
